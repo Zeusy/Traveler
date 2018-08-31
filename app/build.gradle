@@ -33,7 +33,14 @@ dependencies {
     compile 'com.shobhitpuri.custombuttons:google-signin:1.0.0'
 
     //Firebase
-    implementation 'com.google.firebase:firebase-auth:11.0.4'
+//    implementation 'com.google.firebase:firebase-auth:11.0.4'
+    implementation 'com.google.firebase:firebase-auth:11.4.2'
+    implementation 'com.google.android.gms:play-services-auth:11.4.2'
+    implementation 'com.google.android.gms:play-services:11.4.2'
+    //Firebase Crashlytics
+    /*compile('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true
+    }*/
 
     //Test
     testImplementation 'junit:junit:4.12'

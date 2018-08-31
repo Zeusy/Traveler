@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity
             updateUI(currentUser);
         }
         else {
-            Intent mainScreen = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(mainScreen);
+            Intent loginScreen = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(loginScreen);
             finish();
         }
     }
