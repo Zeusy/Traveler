@@ -13,7 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 //import com.facebook.FacebookSdk;
@@ -69,6 +72,18 @@ public class MainActivity extends AppCompatActivity
 
     private void updateUI(FirebaseUser currentUser) {
         //TODO: faire l'update de la navigation pour afficher les info du compte.
+        if(currentUser != null && !currentUser.isAnonymous()) {
+            //Chargement de l'image
+            ImageView imgUser = (ImageView) findViewById(R.id.imageView);
+            //imgUser.setImageURI(currentUser.getPhotoUrl());
+            //if(currentUser.getPhotoUrl() != null)
+                //Glide.with(getApplicationContext()).load(currentUser.getPhotoUrl()).into(imgUser);
+            TextView displayName = (TextView) findViewById(R.id.displayName);
+            displayName.setText(currentUser.getDisplayName());
+            TextView emailUser = (TextView) findViewById(R.id.emailUser);
+            emailUser.setText(currentUser.getEmail());
+        }
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.getHeaderView(0);
     }
